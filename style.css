@@ -1,0 +1,725 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        "Noto Sans JP",
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #667eea,
+            #764ba2
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+/* =========================
+   画面
+========================= */
+
+.screen {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+/* =========================
+   非表示
+========================= */
+
+.hidden {
+
+    display: none !important;
+
+}
+
+
+/* =========================
+   ゲーム画面
+========================= */
+
+.game-container {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================
+   タイトル
+========================= */
+
+h1 {
+
+    margin-top: 0;
+
+    font-size: 32px;
+
+}
+
+.subtitle {
+
+    color: #777;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================
+   名前
+========================= */
+
+.name-area {
+
+    margin-bottom: 20px;
+
+}
+
+.name-area label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+}
+
+#playerName {
+
+    width: 80%;
+
+    padding: 12px;
+
+    border:
+        2px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    text-align: center;
+
+}
+
+#playerName:focus {
+
+    outline: none;
+
+    border-color: #667eea;
+
+}
+
+
+/* =========================
+   ステータス
+========================= */
+
+.status {
+
+    display: flex;
+
+    justify-content:
+        space-around;
+
+    margin: 25px 0;
+
+}
+
+.status div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+.status span {
+
+    font-size: 14px;
+
+    color: #777;
+
+}
+
+.status strong {
+
+    font-size: 28px;
+
+}
+
+
+/* =========================
+   メッセージ
+========================= */
+
+.message {
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin: 20px 0;
+
+    min-height: 30px;
+
+}
+
+
+/* =========================
+   ターゲット
+========================= */
+
+.target {
+
+    background: #f5f5f5;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+.target p {
+
+    margin: 0;
+
+    color: #777;
+
+}
+
+#targetColor {
+
+    margin: 8px 0 0;
+
+    font-size: 42px;
+
+    transition:
+        transform 0.1s;
+
+}
+
+
+/* =========================
+   色ボタン
+========================= */
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 15px;
+
+}
+
+.color-button {
+
+    border: none;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.1s;
+
+}
+
+.color-button:hover {
+
+    transform:
+        scale(1.03);
+
+}
+
+.color-button:active {
+
+    transform:
+        scale(0.95);
+
+}
+
+.red {
+
+    background: #e74c3c;
+
+}
+
+.blue {
+
+    background: #3498db;
+
+}
+
+.green {
+
+    background: #2ecc71;
+
+}
+
+.yellow {
+
+    background: #f1c40f;
+
+    color: #333;
+
+}
+
+
+/* =========================
+   スタート
+========================= */
+
+.start-button {
+
+    margin-top: 25px;
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #333;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.start-button:hover {
+
+    background: #555;
+
+}
+
+.start-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================
+   結果
+========================= */
+
+.result-area {
+
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #f5f5f5;
+
+}
+
+.result-area h2 {
+
+    margin-top: 0;
+
+}
+
+
+/* =========================
+   ランキングボタン
+========================= */
+
+.ranking-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #667eea;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.ranking-button:hover {
+
+    background: #5568d8;
+
+}
+
+
+/* =========================
+   ランキング画面
+========================= */
+
+.ranking-container {
+
+    width: 100%;
+
+    max-width: 600px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================
+   ランキング
+========================= */
+
+#rankingList {
+
+    margin-top: 25px;
+
+}
+
+.rank-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    padding: 15px;
+
+    margin: 10px 0;
+
+    background: #f5f5f5;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+
+}
+
+.rank-number {
+
+    width: 55px;
+
+    font-weight: bold;
+
+}
+
+.rank-name {
+
+    flex: 1;
+
+    text-align: left;
+
+    font-weight: bold;
+
+}
+
+.rank-score {
+
+    font-weight: bold;
+
+}
+
+
+/* 1位 */
+
+.rank-1 {
+
+    background: #fff3bd;
+
+    font-size: 21px;
+
+}
+
+
+/* 2位 */
+
+.rank-2 {
+
+    background: #eeeeee;
+
+}
+
+
+/* 3位 */
+
+.rank-3 {
+
+    background: #f2dfc5;
+
+}
+
+
+/* =========================
+   ランキングボタン
+========================= */
+
+.ranking-buttons {
+
+    margin-top: 25px;
+
+}
+
+.back-button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #333;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+.back-button:hover {
+
+    background: #555;
+
+}
+
+.reset-button {
+
+    margin-top: 12px;
+
+    padding: 8px 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #ddd;
+
+    color: #555;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   ミス演出
+========================= */
+
+.shake {
+
+    animation:
+        shake 0.3s;
+
+}
+
+@keyframes shake {
+
+    0% {
+        transform:
+            translateX(0);
+    }
+
+    20% {
+        transform:
+            translateX(-10px);
+    }
+
+    40% {
+        transform:
+            translateX(10px);
+    }
+
+    60% {
+        transform:
+            translateX(-10px);
+    }
+
+    80% {
+        transform:
+            translateX(10px);
+    }
+
+    100% {
+        transform:
+            translateX(0);
+    }
+
+}
+
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width: 500px) {
+
+    .game-container,
+    .ranking-container {
+
+        padding: 20px;
+
+    }
+
+    h1 {
+
+        font-size: 26px;
+
+    }
+
+    .color-button {
+
+        padding: 20px;
+
+        font-size: 20px;
+
+    }
+
+}
+/* =========================
+   ランキングタブ
+========================= */
+
+.ranking-tab {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 20px;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.2);
+
+    z-index: 100;
+
+}
+
+.ranking-tab:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* スマホ */
+
+@media (max-width: 500px) {
+
+    .ranking-tab {
+
+        top: 10px;
+
+        right: 10px;
+
+        padding: 9px 12px;
+
+        font-size: 14px;
+
+    }
+
+}

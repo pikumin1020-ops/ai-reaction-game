@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI反射神経バトル</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         ゲーム画面
+    ========================== -->
+
+    <div id="gameScreen" class="screen">
+        <button id="rankingTab" class="ranking-tab">
+    🏆 ランキング
+</button>
+
+        <div class="game-container">
+
+            <h1>⚡ AI反射神経バトル</h1>
+
+            <p class="subtitle">
+                AIが考えたゲームに挑戦！
+            </p>
+
+
+            <!-- プレイヤー名 -->
+
+            <div class="name-area">
+
+                <label for="playerName">
+                    プレイヤー名
+                </label>
+
+                <input
+                    type="text"
+                    id="playerName"
+                    placeholder="名前を入力"
+                    maxlength="10"
+                >
+
+            </div>
+
+
+            <!-- ステータス -->
+
+            <div class="status">
+
+                <div>
+                    <span>スコア</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <div>
+                    <span>コンボ</span>
+                    <strong id="combo">0</strong>
+                </div>
+
+                <div>
+                    <span>残り時間</span>
+                    <strong id="time">10</strong>
+                </div>
+
+            </div>
+
+
+            <!-- メッセージ -->
+
+            <div id="message" class="message">
+                名前を入力してスタート！
+            </div>
+
+
+            <!-- ターゲット -->
+
+            <div class="target">
+
+                <p>押す色</p>
+
+                <h2 id="targetColor">---</h2>
+
+            </div>
+
+
+            <!-- 色ボタン -->
+
+            <div class="buttons">
+
+                <button
+                    class="color-button red"
+                    data-color="red">
+                    赤
+                </button>
+
+                <button
+                    class="color-button blue"
+                    data-color="blue">
+                    青
+                </button>
+
+                <button
+                    class="color-button green"
+                    data-color="green">
+                    緑
+                </button>
+
+                <button
+                    class="color-button yellow"
+                    data-color="yellow">
+                    黄
+                </button>
+
+            </div>
+
+
+            <!-- スタート -->
+
+            <button
+                id="startButton"
+                class="start-button">
+                ゲームスタート
+            </button>
+
+
+            <!-- ゲーム終了後 -->
+
+            <div
+                id="resultArea"
+                class="result-area hidden">
+
+                <h2>🎉 GAME OVER</h2>
+
+                <p id="resultText"></p>
+
+                <button
+                    id="rankingButton"
+                    class="ranking-button">
+                    🏆 ランキングを見る
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ランキング画面
+    ========================== -->
+
+    <div
+        id="rankingScreen"
+        class="screen hidden">
+
+        <div class="ranking-container">
+
+            <h1>🏆 RANKING</h1>
+
+            <p class="subtitle">
+                AI反射神経バトル
+            </p>
+
+
+            <div id="rankingList">
+            </div>
+
+
+            <div class="ranking-buttons">
+
+                <button
+                    id="backButton"
+                    class="back-button">
+                    🎮 ゲームに戻る
+                </button>
+
+                <button
+                    id="resetRanking"
+                    class="reset-button">
+                    🗑 ランキングをリセット
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="game.js"></script>
+
+</body>
+</html>
