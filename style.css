@@ -723,3 +723,55 @@ h1 {
     }
 
 }
+/* =========================
+   スマホゲーム用設定
+========================= */
+
+html,
+body {
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+
+/* ゲームのボタンを押したときの
+   ダブルタップズームを防止 */
+
+button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* スマホでボタンを押しやすくする */
+
+.color-button {
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* スマホ画面 */
+
+@media (max-width: 600px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .game-container {
+        width: 95%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .color-button {
+        min-width: 100px;
+        min-height: 70px;
+        font-size: 20px;
+    }
+
+}
